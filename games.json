@@ -1,9 +1,21 @@
 {
     "games": [
         {
+            "name": "Geometry Dash",
+            "appId": "322170"
+          },
+        {
             "id": 1,
             "title": "one armed cook",
             "img": "img/one-armed-cook-portrait-768x1024.jpg"
-        }
+        },
+        {
+            "name": "Counter-Strike: Global Offensive",
+            "appId": "730"
+          },
+          {
+            "name": "Dota 2",
+            "appId": "570"
+          }
     ]
 }
