@@ -1,0 +1,9 @@
+{
+    "games": [
+        {
+            "id": 1,
+            "title": "one armed cook",
+            "img": "img/one-armed-cook-portrait-768x1024.jpg"
+        }
+    ]
+}
