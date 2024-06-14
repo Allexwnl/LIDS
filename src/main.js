@@ -35,5 +35,7 @@ function createcards(data) {
     });
 }
 
+
+
 console.log(localStorage);
 loadinglocalstorage();

@@ -7,6 +7,7 @@ function loadinglocalstorage() {
             data = gamedata.games; // Access the 'games' array from the JSON response
             localStorage.setItem("data", JSON.stringify(data));
             createcards(data);
+            displayResults(data);
         });
 }
 
@@ -30,6 +31,35 @@ function createcards(data) {
         section.appendChild(info)
     });
 }
+
+        // Get references to the DOM elements
+        const searchBar = document.getElementById('searchBar');
+        const searchResults = document.getElementById('searchResults');
+
+        // Function to display results
+        function displayResults(results) {
+            searchResults.innerHTML = ''; 
+            results.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'resultItem';
+                div.textContent = item.title;
+                searchResults.appendChild(div);
+            });
+        }
+
+        // Function to filter the JSON data based on search input
+        function filterResults(query) {
+            const filtered = jsonData.filter(item => 
+                item.title.toLowerCase().includes(query.toLowerCase())
+            );
+            displayResults(filtered);
+        }
+
+        // Event listener for the search bar
+        searchBar.addEventListener('input', (event) => {
+            const query = event.target.value;
+            filterResults(query);
+        });
 
 console.log(localStorage);
 loadinglocalstorage();
