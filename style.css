@@ -124,3 +124,13 @@ body {
     font-size: 1.2rem;
     line-height: 1.6;
 }
+
+img {
+    width: 8rem;
+    height: 11rem;
+}
+
+img:hover {
+    transition: 0.7s;
+    transform: scale(1.2);
+}
