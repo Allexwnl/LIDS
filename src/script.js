@@ -18,6 +18,16 @@ function createcards(data) {
         img.src = game.img;
         img.alt = game.title;
         section.appendChild(img);
+
+        const play = document.createElement('button')
+        play.textContent = 'Play'
+        play.id = 'launchButton'
+        section.appendChild(play)
+
+        const info = document.createElement('button')
+        info.textContent = 'infoButton'
+        info.id = 'infobutton'
+        section.appendChild(info)
     });
 }
 
