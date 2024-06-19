@@ -11,6 +11,12 @@
             "title": "one armed cook",
             "appId": "2551020",
             "img": "img/one-armed-cook-portrait-768x1024.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Wallpaper Engine",
+            "appId": "431960",
+            "img": "img/wallpaper.png"
         }
     ]
 }
