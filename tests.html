@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #searchResults {
+            margin-top: 20px;
+        }
+        .resultItem {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Bar Example</h1>
+    <input type="text" id="searchBar" placeholder="Type to search..." />
+
+    <div id="searchResults"></div>
+
+    <script>
+        // Sample JSON data (this would typically be loaded from an external file)
+        const jsonData = [
+            {"name": "Barbecue Sauce"},
+            {"name": "Chocolate Bar"},
+            {"name": "Granola Bar"},
+            {"name": "Energy Drink"},
+            {"name": "Protein Bar"}
+        ];
+
+        // Get references to the DOM elements
+        const searchBar = document.getElementById('searchBar');
+        const searchResults = document.getElementById('searchResults');
+
+        // Function to display results
+        function displayResults(results) {
+            searchResults.innerHTML = ''; // Clear previous results
+            results.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'resultItem';
+                div.textContent = item.name;
+                searchResults.appendChild(div);
+            });
+        }
+
+        // Function to filter the JSON data based on search input
+        function filterResults(query) {
+            const filtered = jsonData.filter(item => 
+                item.name.toLowerCase().includes(query.toLowerCase())
+            );
+            displayResults(filtered);
+        }
+
+        // Event listener for the search bar
+        searchBar.addEventListener('input', (event) => {
+            const query = event.target.value;
+            filterResults(query);
+        });
+
+        // Initially display all results
+        displayResults(jsonData);
+    </script>
+</body>
+</html>
