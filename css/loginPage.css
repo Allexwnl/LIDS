@@ -111,9 +111,21 @@ div input::placeholder {
     align-items: center;
     align-content: center;
     height: 50vh;
+    margin-top: 7%;
 }
 
 .card div a {
     color: white;
     font-size: small
+}
+
+.loginButton {
+    margin-left: 9%;
+}
+
+.loginButton:hover {
+    margin-left: 9%;
+    background-color: white;
+    transition: 0.7s;
+    color: black;
 }
