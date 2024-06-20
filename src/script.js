@@ -1,17 +1,26 @@
-document.getElementById('launchButton').addEventListener('click', function() {
-    window.location.href = 'steam://run/322170';
-});
-
 let data;
+const gameMap = new Map();
 
 function loadinglocalstorage() {
     fetch("games.json")
         .then(response => response.json())
         .then(gamedata => {
-            data = gamedata.games; // Access the 'games' array from the JSON response
+            data = gamedata.games;
             localStorage.setItem("data", JSON.stringify(data));
+
+            // Create a Map of game objects with their names as keys
+            data.forEach(game => gameMap.set(game.name, game));
+
             createcards(data);
-            displayResults(data);
+
+            const names = data.map(game => game.name);
+
+            // Voeg een event listener toe aan het zoekveld
+            document.getElementById('searchBar').addEventListener('input', () => {
+                const letter = document.getElementById('searchBar').value.trim();
+                const filteredNames = filterResultsByLetter(names, letter);
+                displayResults(filteredNames);
+            });
         });
 }
 
@@ -19,51 +28,44 @@ function createcards(data) {
     const section = document.getElementById("newSection");
 
     data.forEach(game => {
+        const card = document.createElement("div");
+        card.className = "card";
+        section.appendChild(card);
+
         const img = document.createElement("img");
         img.src = game.img;
         img.alt = game.title;
-        section.appendChild(img);
+        card.appendChild(img);
 
-        const play = document.createElement('button')
-        play.textContent = 'Play'
-        play.id = 'launchButton'
-        section.appendChild(play)
+        const play = document.createElement('button');
+        play.textContent = 'Play';
+        play.addEventListener('click', function () {
+            window.location.href = `steam://run/${game.appId}`;
+        });
+        play.id = 'launchButton';
+        card.appendChild(play);
 
-        const info = document.createElement('button')
-        info.textContent = 'infoButton'
-        info.id = 'infobutton'
-        section.appendChild(info)
+        const info = document.createElement('button');
+        info.textContent = 'Info';
+        info.id = 'infobutton';
+        info.addEventListener('click', function () {
+            window.location.href = `moreinfo.html?game=${encodeURIComponent(game.name)}`;
+        });
+        card.appendChild(info);
     });
 }
 
-        // Get references to the DOM elements
-        const searchBar = document.getElementById('searchBar');
-        const searchResults = document.getElementById('searchResults');
+function filterResultsByLetter(results, letter) {
+    return results.filter(name => name.toLowerCase().includes(letter.toLowerCase()));
+}
 
-        // Function to display results
-        function displayResults(results) {
-            searchResults.innerHTML = ''; 
-            results.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'resultItem';
-                div.textContent = item.title;
-                searchResults.appendChild(div);
-            });
-        }
+function displayResults(filteredNames) {
+    const newSection = document.getElementById('newSection');
+    newSection.innerHTML = '';
 
-        // Function to filter the JSON data based on search input
-        function filterResults(query) {
-            const filtered = jsonData.filter(item => 
-                item.title.toLowerCase().includes(query.toLowerCase())
-            );
-            displayResults(filtered);
-        }
-
-        // Event listener for the search bar
-        searchBar.addEventListener('input', (event) => {
-            const query = event.target.value;
-            filterResults(query);
-        });
+    const filteredGames = filteredNames.map(name => gameMap.get(name));
+    createcards(filteredGames);
+}
 
 console.log(localStorage);
 loadinglocalstorage();
