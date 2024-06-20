@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <title>Launch Geometry Dash</title>
     <script src="src/script.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +16,8 @@
     <script src="src/index.js" defer></script>
     <div class="navbar">
         <a href="index.html" class="navbar-logo">LIDS</a>
-        <div class="navbar-search">
-            <input type="text" placeholder="Search...">
+        <div class="navbar-search" id="autocompleteSearch">
+            <input type="text" placeholder="Search..." id="searchBar">
         </div>
         <div class="navbar-links">
             <a href="#">Link 1</a>
@@ -27,7 +26,7 @@
         </div>
     </div>
     <button id="launchButton">Launch Geometry Dash</button>
-
+    
     <section>
         <h3>New</h3>
         <div id="newSection">
