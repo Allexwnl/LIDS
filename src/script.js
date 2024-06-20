@@ -8,14 +8,13 @@ function loadinglocalstorage() {
             data = gamedata.games;
             localStorage.setItem("data", JSON.stringify(data));
 
-        // Create a Map of game objects with their names as keys
+      
         data.forEach(game => gameMap.set(game.name, game));
 
         createcards(data);
 
         const names = data.map(game => game.name);
 
-        // Voeg een event listener toe aan het zoekveld
         document.getElementById('searchBar').addEventListener('input', () => {
             const letter = document.getElementById('searchBar').value.trim();
             const filteredNames = filterResultsByLetter(names, letter);
@@ -49,6 +48,7 @@ data.forEach(game => {
     info.textContent = 'infoButton'
     info.id = 'infobutton'
     card.appendChild(info)
+    window.location.href = ("moreinfo.html")
 });
 }
 
@@ -66,7 +66,3 @@ createcards(filteredGames);
 
 console.log(localStorage);
 loadinglocalstorage();
-
-document.getElementById('launchButton').addEventListener('click', function() {
-    window.location.href = 'steam://run/322170';
-});
