@@ -11,7 +11,11 @@ body {
     background: linear-gradient(90deg, #357cff, #FF94D7);
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 3;
 }
+
+
 
 .navbar-logo {
     color: #ffffff;
@@ -27,7 +31,7 @@ body {
     justify-content: center;
 }
 
-.navbar-search input {
+.navbar-search input[type="text"] {
     width: 25rem;
     padding: 8px 10px;
     border: #ffffff 2px solid;
@@ -62,6 +66,66 @@ body {
 .navbar-logo:hover {
     color: #f8f8f8;
     transform: scale(1.1);
+}
+
+#filterButton {
+    border-radius: 0px 8px 8px 0px;
+    border: none;
+    background: none;
+    color: white;
+}
+
+#filterButton {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: 100vw;
+    height: 40vh;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    z-index: 2;
+}
+
+.closeBtn {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+#filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+#menu.hidden {
+    transform: translateY(-100%);
+}
+
+#menu.visible {
+    margin-top: 6%;
+    transform: translateY(0);
+    width: 100%;
+    width: 100vw;
+}
+
+.closeButtonStyle {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    height: 20%;
+    background: transparent;
+    border: none;
 }
 
 .game-info-container {
@@ -136,6 +200,7 @@ img {
     flex-direction: row;
     margin: 15px;
     gap: 10px;
+    z-index: 1;
 }
 
 .card {

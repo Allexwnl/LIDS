@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIDS | Home</title>
     <link rel="stylesheet" href="style.css">
-    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -19,7 +19,27 @@
         <div class="navbar-links">
             <a href="#">Link 1</a>
             <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <button id="filterButton"><i class='bx bx-lg bx-menu'></i></button>
+        </div>
+    </div>
+    <div class="filtersection">
+        <div id="menu" class="hidden">
+            <div id="filters">
+            <div class="filters-menu">
+                <h3>politie</h3>
+            </div>
+            <div class="filters-menu">
+                <h3>zorg</h3>
+                <input type="checkbox" id="closeButton">
+                <label for="zorg1">verpleegster</label><br>
+            </div>
+            <div class="filters-menu">
+                <h3>economie</h3>
+            </div>
+            </div>
+            <div class="closeBtn">
+                <button id="closeButton" class="closeButton"><i class='bx bx-lg bx-x'></i></button>
+            </div>
         </div>
     </div>
     
