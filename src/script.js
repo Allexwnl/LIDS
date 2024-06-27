@@ -1,3 +1,5 @@
+import VDF from 'vdf-parser';
+
 let data;
 const gameMap = new Map();
 
@@ -8,53 +10,54 @@ function loadinglocalstorage() {
             data = gamedata.games;
             localStorage.setItem("data", JSON.stringify(data));
 
-// Create a Map of game objects with their names as keys
-data.forEach(game => gameMap.set(game.name, game));
+            // Create a Map of game objects with their names as keys
+            data.forEach(game => gameMap.set(game.name, game));
 
-createcards(data);
+            createcards(data);
 
-const names = data.map(game => game.name);
+            const names = data.map(game => game.name);
 
-// Voeg een event listener toe aan het zoekveld
-document.getElementById('searchBar').addEventListener('input', () => {
-    const letter = document.getElementById('searchBar').value.trim();
-    const filteredNames = filterResultsByLetter(names, letter);
-    displayResults(filteredNames);
-});
-});
+            // Voeg een event listener toe aan het zoekveld
+            document.getElementById('searchBar').addEventListener('input', () => {
+                const letter = document.getElementById('searchBar').value.trim();
+                const filteredNames = filterResultsByLetter(names, letter);
+                displayResults(filteredNames);
+            });
+        });
 }
 
 function createcards(data) {
     const section = document.getElementById("newSection");
 
-data.forEach(game => {
-    const card = document.createElement("div");
-    card.className = "card";
-    section.appendChild(card);
+    data.forEach(game => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.dataset.gameId = game.appId;
+        section.appendChild(card);
 
-    const img = document.createElement("img");
-    img.src = game.img;
-    img.alt = game.title;
-    card.appendChild(img);
+        const img = document.createElement("img");
+        img.src = game.img;
+        img.alt = game.title;
+        card.appendChild(img);
 
-    const play = document.createElement('button');
-    play.textContent = 'Play';
-    play.id = 'launchButton'
-    play.addEventListener('click', function() {
-        window.location.href = `steam://run/${game.appId}`;
+        const play = document.createElement('button');
+        play.textContent = 'Play';
+        play.id = 'launchButton'
+        play.addEventListener('click', function () {
+            window.location.href = `steam://run/${game.appId}`;
+        });
+        play.className = 'launchButton';
+        card.appendChild(play);
+
+        const info = document.createElement('button');
+        info.textContent = 'infobutton';
+        info.id = 'infobutton'
+        info.addEventListener('click', function () {
+            window.location.href = `moreinfo.html?gameId=${game.appId}`;
+        });
+        info.className = 'infoButton';
+        card.appendChild(info);
     });
-    play.className = 'launchButton';
-    card.appendChild(play);
-
-    const info = document.createElement('button');
-    info.textContent = 'infobutton';
-    info.id = 'infobutton'
-    info.addEventListener('click', function() {
-        window.location.href = `moreinfo.html?gameId=${game.appId}`;
-    });
-    info.className = 'infoButton';
-    card.appendChild(info);
-});
 }
 
 function filterResultsByLetter(results, letter) {
@@ -65,8 +68,8 @@ function displayResults(filteredNames) {
     const newSection = document.getElementById('newSection');
     newSection.innerHTML = '';
 
-const filteredGames = filteredNames.map(name => gameMap.get(name));
-createcards(filteredGames);
+    const filteredGames = filteredNames.map(name => gameMap.get(name));
+    createcards(filteredGames);
 }
 
 // console.log(localStorage);
@@ -81,9 +84,9 @@ fetch(apiUrl)
     .then(data => {
         const gameData = data['322170'].data;
 
-    const gameInfoContainer = document.getElementById('game-info');
+        const gameInfoContainer = document.getElementById('game-info');
 
-    const html = `
+        const html = `
         <div class="game-detail">
             <label>Name:</label>
             <div>${gameData.name}</div>
@@ -125,18 +128,18 @@ fetch(apiUrl)
         </div>
     `;
 
-    gameInfoContainer.innerHTML = html;
+        gameInfoContainer.innerHTML = html;
 
-    // Add event listener to the More Info button
-    const moreInfoButton = document.getElementById('infoButton');
-    moreInfoButton.addEventListener('click', function() {
-        const gameId = moreInfoButton.getAttribute('data-game-id');
-        window.location.href = `moreinfo.html?gameId=${gameId}`;
+        // Add event listener to the More Info button
+        const moreInfoButton = document.getElementById('infoButton');
+        moreInfoButton.addEventListener('click', function () {
+            const gameId = moreInfoButton.getAttribute('data-game-id');
+            window.location.href = `moreinfo.html?gameId=${gameId}`;
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching game data:', error);
     });
-})
-.catch(error => {
-    console.error('Error fetching game data:', error);
-});
 function getPlatforms(platforms) {
     const platformNames = [];
     if (platforms.windows) platformNames.push('Windows');
@@ -149,45 +152,24 @@ function getGenres(genres) {
     return genres.map(genre => genre.description).join(', ');
 }
 
+document.getElementById('inputFile').addEventListener('change', async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    const butDir = document.getElementById('butDirectory');
-    const output = document.getElementById('output');
-
-    butDir.addEventListener('click', async () => {
-
-        try {
-            const dirHandle = await window.showOpenFilePicker({
-                // mode: 'read',
-
-            });
-            // const fileDetails = await scanDirectory(dirHandle);
-            // output.textContent = fileDetails.join('\n');
-        } catch (error) {
-            output.textContent = `Error: ${error.message}`;
-        }
-    });
-
-    async function scanDirectory(dirHandle) {
-        const promises = [];
-
-        for await (const entry of dirHandle.values()) {
-            if (entry.kind === 'file') {
-                promises.push(entry.getFile().then((file) => `${file.name} (${file.size} bytes)`));
-            } else if (entry.kind === 'directory') {
-                promises.push(scanDirectory(entry));
+    const text = await file.text();
+    try {
+        const parsedData = VDF.parse(text);
+        const apps = parsedData.libraryfolders["0"].apps;
+        const appIds = Object.keys(apps).map(Number);
+        console.log(appIds);
+        document.querySelectorAll('#newSection > .card').forEach(card => {
+            if (appIds.includes(Number(card.dataset.gameId))) {
+                console.log('Game installed:', card.dataset.gameId);
+            } else {
+                card.querySelector('#launchButton').remove();
             }
-        }
-
-        const results = await Promise.all(promises);
-        return results.flat();
+        })
+    } catch (error) {
+        console.error("Error parsing VDF file:", error);
     }
-});
-
-document.getElementById('inputFile').addEventListener('change', (event) => {
-    event.target.files[0].text().then((text) => {
-        console.log(text);
-        console.log(text.match(/\"\d{2,}\"/g));
-    });
 })

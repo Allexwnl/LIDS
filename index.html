@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIDS | Home</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="src/script.js" defer></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "vdf-parser": "https://cdn.jsdelivr.net/npm/vdf-parser/+esm"
+            }
+        }
+    </script>
+    <script type="module" src="src/script.js" defer></script>
 </head>
 <body>
     <div class="navbar">
@@ -19,11 +26,8 @@
             <a href="#">Link 3</a>
         </div>
     </div>
-<<<<<<< HEAD
 
-=======
     
->>>>>>> 68d188a92e863647bcaaa0d2bef19e21227b9b16
     <section>
         <div id="newSection"></div>
     </section>
