@@ -1,7 +1,10 @@
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f8f8f8;
+    height: 100vh;
+    width: 100vw;
 }
 
 .navbar {
@@ -95,11 +98,7 @@ body {
     z-index: 2;
 }
 
-.closeBtn {
-    display: flex;
-    align-items: end;
-    justify-content: center;
-}
+
 
 #filters {
     display: flex;
@@ -113,20 +112,20 @@ body {
 }
 
 #menu.visible {
-    margin-top: 6%;
+    margin-top: 10vh;
     transform: translateY(0);
-    width: 100%;
-    width: 100vw;
 }
 
 .closeButtonStyle {
     padding: 5px 10px;
     font-size: 14px;
     cursor: pointer;
-    height: 20%;
+    height: 100%;
     background: transparent;
     border: none;
 }
+
+
 
 .game-info-container {
     display: flex;
