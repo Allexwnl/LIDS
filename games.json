@@ -4,17 +4,20 @@
             "id": 1,
             "name": "Geometry Dash",
             "appId": "322170",
+            "genre": "rythm",
             "img": "img/geometrydash-feature.jpg"
           },
         {
             "id": 2,
             "name": "one armed cook",
+            "genre": "koken",
             "appId": "2551020",
             "img": "img/one-armed-cook-portrait-768x1024.jpg"
         },
         {
             "id": 3,
             "name": "Wallpaper Engine",
+            "genre": "design",
             "appId": "431960",
             "img": "img/wallpaper.png"
         }
