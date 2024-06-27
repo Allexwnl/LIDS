@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <script src="src/script.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIDS | Home</title>
-    <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="src/script.js" defer></script>
 </head>
-
 <body>
     <div class="navbar">
         <a href="index.html" class="navbar-logo">LIDS</a>
@@ -22,12 +19,21 @@
             <a href="#">Link 3</a>
         </div>
     </div>
-   
 
     <section>
-        <div id="newSection">
-        </div>
+        <div id="newSection"></div>
     </section>
 
+    <div class="container">
+        <h1>Geometry Dash Information</h1>
+        <div id="game-info"></div>
+    </div>
+
+    <div>
+        <button id="butDirectory">Get gameinfo</button>
+    </div>
+    <input type="file" name="inputFile" id="inputFile">
+
+    <pre id="output">Loading...</pre>
 </body>
 </html>

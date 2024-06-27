@@ -17,6 +17,12 @@
             "name": "Wallpaper Engine",
             "appId": "431960",
             "img": "img/wallpaper.png"
+        },
+        {
+            "id": 4,
+            "name": "Bread & Fred",
+            "appId": "1607680",
+            "img": "img/breadfred.jpg"
         }
     ]
 }
