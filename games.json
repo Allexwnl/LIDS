@@ -2,10 +2,39 @@
     "games": [
         {
             "id": 1,
-            "name": "Geometry Dash",
+            "title": "Geometry Dash",
+            "description": "Geometry Dash game now",
             "appId": "322170",
             "img": "img/geometrydash-feature.jpg"
-          },
+        },
+        {
+            "id": 1,
+            "title": "Geometry Dash",
+            "description": "Geometry Dash game now",
+            "appId": "322170",
+            "img": "img/geometrydash-feature.jpg"
+        },
+        {
+            "id": 1,
+            "title": "Geometry Dash",
+            "description": "Geometry Dash game now",
+            "appId": "322170",
+            "img": "img/geometrydash-feature.jpg"
+        },
+        {
+            "id": 1,
+            "title": "Geometry Dash",
+            "description": "Geometry Dash game now",
+            "appId": "322170",
+            "img": "img/geometrydash-feature.jpg"
+        },
+        {
+            "id": 1,
+            "title": "Geometry Dash",
+            "description": "Geometry Dash game now",
+            "appId": "322170",
+            "img": "img/geometrydash-feature.jpg"
+        },
         {
             "id": 2,
             "title": "one armed cook",

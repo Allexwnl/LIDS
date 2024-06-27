@@ -29,31 +29,52 @@ function createcards(data) {
 
     data.forEach(game => {
         const card = document.createElement("div");
-        card.className = "card";
+        card.className = "custom-card";
         section.appendChild(card);
 
-        const img = document.createElement("img");
-        img.src = game.img;
-        img.alt = game.title;
+        const img = document.createElement("div");
+        img.className = "custom-card-image";
+        img.style.backgroundImage = `url(${game.img})`;
+        img.style.backgroundSize = "cover";
+        img.style.backgroundPosition = "center";
         card.appendChild(img);
 
+        const cardContent = document.createElement("div");
+        cardContent.className = "custom-card-content";
+        card.appendChild(cardContent);
+
+        const cardTitle = document.createElement("h2");
+        cardTitle.className = "custom-card-title";
+        cardTitle.textContent = game.title;
+        cardContent.appendChild(cardTitle);
+
+        const cardDescription = document.createElement("p");
+        cardDescription.className = "custom-card-description";
+        cardDescription.textContent = game.description;
+        cardContent.appendChild(cardDescription);
+
+        const cardButtons = document.createElement("div");
+        cardButtons.className = "custom-card-buttons";
+        cardContent.appendChild(cardButtons);
+
         const play = document.createElement('button');
+        play.className = 'custom-card-button';
         play.textContent = 'Play';
         play.addEventListener('click', function () {
             window.location.href = `steam://run/${game.appId}`;
         });
-        play.id = 'launchButton';
-        card.appendChild(play);
+        cardButtons.appendChild(play);
 
         const info = document.createElement('button');
+        info.className = 'custom-card-button-secondary';
         info.textContent = 'Info';
-        info.id = 'infobutton';
         info.addEventListener('click', function () {
-            window.location.href = `moreinfo.html?game=${encodeURIComponent(game.name)}`;
+            window.location.href = `moreinfo.html?game=${encodeURIComponent(game.title)}`;
         });
-        card.appendChild(info);
+        cardButtons.appendChild(info);
     });
 }
+
 
 function filterResultsByLetter(results, letter) {
     return results.filter(name => name.toLowerCase().includes(letter.toLowerCase()));
