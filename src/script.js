@@ -88,5 +88,4 @@ function displayResults(filteredNames) {
     createcards(filteredGames);
 }
 
-console.log(localStorage);
 loadinglocalstorage();

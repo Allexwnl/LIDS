@@ -5,6 +5,7 @@
             "title": "Geometry Dash",
             "description": "Geometry Dash game now",
             "appId": "322170",
+            "genre": "rythm",
             "img": "img/geometrydash-feature.jpg"
         },
         {
@@ -37,9 +38,17 @@
         },
         {
             "id": 2,
-            "title": "one armed cook",
+            "name": "one armed cook",
+            "genre": "koken",
             "appId": "2551020",
             "img": "img/one-armed-cook-portrait-768x1024.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Wallpaper Engine",
+            "genre": "design",
+            "appId": "431960",
+            "img": "img/wallpaper.png"
         }
     ]
 }

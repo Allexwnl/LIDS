@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <script src="src/script.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIDS | Home</title>
-    <link rel="stylesheet" href="test.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/loginPage.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
     <div class="navbar">
         <a href="index.html" class="navbar-logo">LIDS</a>
@@ -19,19 +16,22 @@
         <div class="navbar-links">
             <a href="#">Link 1</a>
             <a href="#">Link 2</a>
-            <button id="filterButton"><i class='bx bx-lg bx-menu'></i></button>
+            <a href="#">Link 3</a>
         </div>
     </div>
-    <div class="filtersection">
-        <div id="menu" class="hidden">
-            <button id="closeButton"><i class='bx bx-lg bx-x'></i></button>
-        </div>
-    </div>
-    
-    <section>
-        <div id="newSection">
+
+    <section class="loginCard">
+        <div class="card">
+            <h1>Login</h1>
+            <div class="content">
+                <label for="email">Email</label>
+                <input type="email" class='bx bxs-user' placeholder="Email...">
+                <label for="email">Password</label>
+                <input type="password" placeholder="password">
+                <a href="#">forgot your password?</a>
+                <input type="submit" value="login" class="loginButton">
+            </div>
         </div>
     </section>
-
 </body>
 </html>
