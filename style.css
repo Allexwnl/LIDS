@@ -17,6 +17,8 @@ body {
     background: #357cff;
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    position: relative;
 }
 
 .navbar-inner {
@@ -74,6 +76,70 @@ body {
     font-weight: 900;
 }
 
+
+#filterButton {
+    border-radius: 0px 8px 8px 0px;
+    border: none;
+    background: none;
+    color: white;
+}
+
+#filterButton {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#menu {
+    margin-top: 12vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: 100vw;
+    height: 40vh;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    z-index: 2;
+}
+
+
+
+#filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+#menu.hidden {
+    transform: translateY(-100%);
+}
+
+#menu.visible {
+    margin-top: 6vh;
+    transform: translateY(0);
+}
+
+.closeButtonStyle {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    height: 100%;
+    background: transparent;
+    border: none;
+    position: relative;
+    top: 18vh;
+    right: 50vw;
+    transform: transform 1s;
+}
+
+.closeButtonStyle:hover {
+    transform: transform 1s;
+}
+
 .navbar-links a:hover,
 .navbar-logo:hover {
     color: #f8f8f8;
@@ -93,6 +159,7 @@ body {
     max-width: 120rem;
     margin: 15px;
     gap: 10px;
+    z-index: 1;
 }
 
 .container {
