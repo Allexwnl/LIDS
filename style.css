@@ -16,7 +16,7 @@ body {
 .navbar {
     background: #357cff;
     padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 3;
     position: relative;
 }
@@ -90,22 +90,19 @@ body {
 }
 
 #menu {
-    margin-top: 12vh;
+    margin-top: 14vh;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     width: 100vw;
     height: 40vh;
-    background-color: #f0f0f0;
+    background-color: #357cff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transform: translateY(-100%);
     transition: transform 0.5s ease-in-out;
-    display: flex;
     z-index: 2;
 }
-
-
 
 #filters {
     display: flex;
@@ -131,9 +128,11 @@ body {
     background: transparent;
     border: none;
     position: relative;
-    top: 18vh;
+    top: 33vh;
     right: 50vw;
     transform: transform 1s;
+    display: flex;
+    flex-direction: row;
 }
 
 .closeButtonStyle:hover {
