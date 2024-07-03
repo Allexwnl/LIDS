@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <script src="src/script.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIDS | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "vdf-parser": "https://cdn.jsdelivr.net/npm/vdf-parser/+esm"
+            }
+        }
+    </script>
+    <script type="module" src="src/script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
     <div class="navbar">
         <div class="navbar-inner">
@@ -47,11 +53,22 @@
             </div>
         </div>
     </div>
+
     
     <section>
-        <div id="newSection">
-        </div>
+        <div id="newSection"></div>
     </section>
 
+    <div class="container">
+        <h1>Geometry Dash Information</h1>
+        <div id="game-info"></div>
+    </div>
+
+    <div>
+        <button id="butDirectory">Get gameinfo</button>
+    </div>
+    <input type="file" name="inputFile" id="inputFile">
+
+    <pre id="output">Loading...</pre>
 </body>
 </html>
