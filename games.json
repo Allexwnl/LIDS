@@ -38,14 +38,14 @@
         },
         {
             "id": 2,
-            "name": "one armed cook",
+            "title": "one armed cook",
             "genre": "koken",
             "appId": "2551020",
             "img": "img/one-armed-cook-portrait-768x1024.jpg"
         },
         {
             "id": 3,
-            "name": "Wallpaper Engine",
+            "title": "Wallpaper Engine",
             "genre": "design",
             "appId": "431960",
             "img": "img/wallpaper.png"
