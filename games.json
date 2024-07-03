@@ -23,6 +23,38 @@
             "name": "Bread & Fred",
             "appId": 1607680,
             "img": "img/breadfred.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Geometry Dash",
+            "appId": 322170,
+            "title": "Geometry Dash",
+            "description": "Geometry Dash game now",
+            "genre": "rythm",
+            "img": "img/geometrydash-feature.jpg"
+        },
+        {
+            "id": 1,
+            "title": "Geometry Dash",
+            "description": "Geometry Dash game now",
+            "appId": "322170",
+            "img": "img/geometrydash-feature.jpg"
+        },
+        {
+            "id": 1,
+            "title": "Geometry Dash",
+            "description": "Geometry Dash game now",
+            "appId": "322170",
+            "img": "img/geometrydash-feature.jpg"
+        },
+        {
+            "id": 1,
+            "title": "Geometry Dash",
+            "description": "Geometry Dash game now",
+            "appId": "322170",
+            "img": "img/geometrydash-feature.jpg"
         }
+
+
     ]
 }
