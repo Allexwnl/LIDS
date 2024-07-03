@@ -2,9 +2,34 @@
     "games": [
         {
             "id": 1,
+            "name": "Geometry Dash",
+            "appId": 322170,
+            "img": "img/geometrydash-feature.jpg"
+          },
+        {
+            "id": 2,
+            "name": "one armed cook",
+            "appId": 2551020,
+            "img": "img/one-armed-cook-portrait-768x1024.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Wallpaper Engine",
+            "appId": 431960,
+            "img": "img/wallpaper.png"
+        },
+        {
+            "id": 4,
+            "name": "Bread & Fred",
+            "appId": 1607680,
+            "img": "img/breadfred.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Geometry Dash",
+            "appId": 322170,
             "title": "Geometry Dash",
             "description": "Geometry Dash game now",
-            "appId": "322170",
             "genre": "rythm",
             "img": "img/geometrydash-feature.jpg"
         },
@@ -50,5 +75,7 @@
             "appId": "431960",
             "img": "img/wallpaper.png"
         }
+
+
     ]
 }
