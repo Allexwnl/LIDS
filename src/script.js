@@ -34,10 +34,7 @@ function createcards(data) {
         const card = document.createElement("div");
         card.className = "custom-card";
         section.appendChild(card)
-
-
-
-
+        
         const img = document.createElement("div");
         img.className = "custom-card-image";
         img.style.backgroundImage = `url(${game.img})`;
