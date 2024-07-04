@@ -5,8 +5,8 @@ const gameMap = new Map();
 
 function loadinglocalstorage() {
     fetch("games.json")
-        .then(response => response.json())
-        .then(gamedata => {
+       .then(response => response.json())
+       .then(gamedata => {
             data = gamedata.games;
             localStorage.setItem("data", JSON.stringify(data));
 
@@ -21,9 +21,7 @@ function loadinglocalstorage() {
                 const letter = document.getElementById('searchBar').value.trim();
                 const filteredNames = filterResultsByLetter(names, letter);
                 displayResults(filteredNames);
-            });
-
-            console.log(localStorage);
+            }); // <--- Add this closing parenthesis
         });
 }
 
@@ -83,7 +81,7 @@ function createcards(data) {
 }
 
 function filterResultsByLetter(results, letter) {
-    return results.filter(name => name.toLowerCase().includes(letter.toLowerCase()));
+    return results.filter(name => name?.toLowerCase().includes(letter.toLowerCase()));
 }
 
 function displayResults(filteredNames) {
@@ -140,25 +138,6 @@ document.getElementById('inputFile').addEventListener('change', async (event) =>
 });
 
 // Toggle menu visibility
-const closeButton = document.getElementById('closeButton');
-const menu = document.getElementById('menu');
-let isRotated = false;
-
-closeButton.addEventListener('click', function() {
-    toggleMenu();
-    if (isRotated) {
-        closeButton.style.transform = 'rotate(0deg)';
-    } else {
-        closeButton.style.transform = 'rotate(180deg)';
-    }
-    isRotated = !isRotated;
-});
-
-function toggleMenu() {
-    menu.classList.toggle('hidden');
-    menu.classList.toggle('visible');
-}
-
 function filterItems(genre) {
     const searchTerm = document.getElementsByClassName(genre);
     const filteredContainer = document.getElementById('newSection');
