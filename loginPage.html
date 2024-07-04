@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/loginPage.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>LIDS | Info</title>
+    <link rel="stylesheet" href="moreinfo.css">
 </head>
 <body>
     <div class="navbar">
         <a href="index.html" class="navbar-logo">LIDS</a>
-        <div class="navbar-search" id="autocompleteSearch">
-            <input type="text" placeholder="Search..." id="searchBar">
+        <div class="navbar-search">
+            <input type="text" placeholder="Search...">
         </div>
         <div class="navbar-links">
             <a href="#">Link 1</a>
@@ -20,18 +19,28 @@
         </div>
     </div>
 
-    <section class="loginCard">
-        <div class="card">
-            <h1>Login</h1>
-            <div class="content">
-                <label for="email">Email</label>
-                <input type="email" class='bx bxs-user' placeholder="Email...">
-                <label for="email">Password</label>
-                <input type="password" placeholder="password">
-                <a href="#">forgot your password?</a>
-                <input type="submit" value="login" class="loginButton">
+    <div class="game-info-container">
+        <div class="game-details">
+            <h1 class="game-title">Game Title</h1>
+            <p class="game-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum
+                vestibulum.
+                Cras venenatis euismod malesuada. Nulla facilisi. Proin convallis nulla a purus gravida, ut dignissim
+                nulla
+                scelerisque.
+            </p>
+        </div>
+        <div class="main-content">
+            <div class="main-image-container">
+                <img src="https://via.placeholder.com/1600x900" alt="Main Game Image" class="main-game-image">
+            </div>
+            <div class="game-gallery">
+                <img src="https://via.placeholder.com/192x108" alt="Game Image 1">
+                <img src="https://via.placeholder.com/192x108" alt="Game Image 2">
+                <img src="https://via.placeholder.com/192x108" alt="Game Image 3">
+                <img src="https://via.placeholder.com/192x108" alt="Game Image 4">
             </div>
         </div>
-    </section>
+    </div>
 </body>
 </html>
