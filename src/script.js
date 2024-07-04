@@ -74,7 +74,7 @@ function createcards(data) {
         info.className = 'custom-card-button-secondary';
         info.textContent = 'Info';
         info.addEventListener('click', function () {
-            window.location.href = `moreinfo.html?game=${encodeURIComponent(game.title)}`;
+            window.location.href = `moreinfo.html?game=${encodeURIComponent(game.name)}`;
         });
         cardButtons.appendChild(info);
     });
