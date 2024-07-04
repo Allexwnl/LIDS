@@ -3,37 +3,39 @@
         {
             "id": 1,
             "name": "Geometry Dash",
-            "appId": 322170,
-            "title": "Geometry Dash",
-            "description": "Geometry Dash game now",
-            "genre": "rythm",
-            "img": "img/geometrydash-feature.jpg"
-        },
+            "appId": "322170",
+            "img": "img/geometrydash-feature.jpg",
+            "gallery": [
+
+            ]
+          },
         {
             "id": 2,
-            "appId": 2551020,
+            "name": "one armed cook",
+            "appId": "2551020",
             "img": "img/one-armed-cook-portrait-768x1024.jpg",
-            "genre": "koken",
-            "name": "One Armed Cook",
-            "title": "one armed cook",
-            "description": "one cooked"
+            "gallery": [
+
+            ]
         },
         {
             "id": 3,
             "name": "Wallpaper Engine",
-            "title": "walpaper Engine",
-            "genre": "design",
             "appId": "431960",
-            "img": "img/wallpaper.png"
+            "img": "img/wallpaper.png",
+            "gallery": [
+                "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/431960/ss_5aec3335b1ae2300aa91da990d7e24541ddcf68d.1920x1080.jpg?t=1717097477",
+                "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/431960/ss_3f539468e81b897f28ea5e3de4b8cfdfe7220a21.1920x1080.jpg?t=1717097477"
+            ]
         },
         {
             "id": 4,
-            "name": "Bread & Fred",
-            "title": "Bread & Fred",
-            "appId": 1607680,
-            "img": "img/breadfred.jpg"
+            "name": "InductVR (beta)",
+            "appId": "907180",
+            "img": "img/inductVR.png",
+            "gallery": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/907180/ss_a5825d662079f587b15b470e563792c2dedaf94f.1920x1080.jpg?t=1560774744"
+            ]
         }
-
-
     ]
 }
