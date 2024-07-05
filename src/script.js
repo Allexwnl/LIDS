@@ -1,10 +1,12 @@
+import VDF from 'vdf-parser';
+
 let data;
 const gameMap = new Map();
 
 function loadinglocalstorage() {
     fetch("games.json")
-        .then(response => response.json())
-        .then(gamedata => {
+       .then(response => response.json())
+       .then(gamedata => {
             data = gamedata.games;
             localStorage.setItem("data", JSON.stringify(data));
 
@@ -15,12 +17,11 @@ function loadinglocalstorage() {
 
             const names = data.map(game => game.name);
 
-            // Voeg een event listener toe aan het zoekveld
             document.getElementById('searchBar').addEventListener('input', () => {
                 const letter = document.getElementById('searchBar').value.trim();
                 const filteredNames = filterResultsByLetter(names, letter);
                 displayResults(filteredNames);
-            });
+            }); // <--- Add this closing parenthesis
         });
 }
 
@@ -30,6 +31,9 @@ function createcards(data) {
     data.forEach(game => {
         const card = document.createElement("div");
         card.className = "custom-card";
+        section.appendChild(card)
+        
+        card.dataset.gameId = game.appId; // Store the game ID in the dataset
         section.appendChild(card);
 
         const img = document.createElement("div");
@@ -58,9 +62,10 @@ function createcards(data) {
         cardContent.appendChild(cardButtons);
 
         const play = document.createElement('button');
-        play.className = 'custom-card-button';
         play.textContent = 'Play';
-        play.addEventListener('click', function () {
+        play.id = 'launchButton';
+        play.className = 'custom-card-button';
+        play.addEventListener('click', function() {
             window.location.href = `steam://run/${game.appId}`;
         });
         cardButtons.appendChild(play);
@@ -75,9 +80,8 @@ function createcards(data) {
     });
 }
 
-
 function filterResultsByLetter(results, letter) {
-    return results.filter(name => name.toLowerCase().includes(letter.toLowerCase()));
+    return results.filter(name => name?.toLowerCase().includes(letter.toLowerCase()));
 }
 
 function displayResults(filteredNames) {
@@ -88,4 +92,82 @@ function displayResults(filteredNames) {
     createcards(filteredGames);
 }
 
+// Load game data from local storage and display cards
 loadinglocalstorage();
+
+
+
+function getPlatforms(platforms) {
+    const platformNames = [];
+    if (platforms.windows) platformNames.push('Windows');
+    if (platforms.mac) platformNames.push('Mac');
+    if (platforms.linux) platformNames.push('Linux');
+    return platformNames.join(', ');
+}
+
+function getGenres(genres) {
+    return genres.map(genre => genre.description).join(', ');
+}
+
+// Event listener for file input
+document.getElementById('inputFile').addEventListener('change', async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const text = await file.text();
+    try {
+        const parsedData = VDF.parse(text);
+        const apps = parsedData.libraryfolders["0"].apps;
+        const appIds = Object.keys(apps).map(Number);
+
+        // Update cards based on installed games
+        document.querySelectorAll('#newSection > .custom-card').forEach(card => {
+            const gameId = Number(card.dataset.gameId);
+            const launchButton = card.querySelector('#launchButton');
+            
+            if (!appIds.includes(gameId)) {
+                launchButton.textContent = 'Install';
+                launchButton.addEventListener('click', function() {
+                    window.location.href = `https://store.steampowered.com/app/${gameId}`;
+                });
+            }
+        });
+    } catch (error) {
+        console.error("Error parsing VDF file:", error);
+    }
+});
+
+// Toggle menu visibility
+function filterItems(genre) {
+    const searchTerm = document.getElementsByClassName(genre);
+    const filteredContainer = document.getElementById('newSection');
+
+    if (searchTerm[0].checked) {
+        // Filter items by genre
+        const filteredItems = data.filter(item => item.genre && item.genre.toLowerCase() === genre.toLowerCase());
+
+        // Clear the container
+        filteredContainer.innerHTML = '';
+
+        // Add filtered items to the container
+        filteredItems.forEach(item => {
+            createcards([item]); // Pass the item as an array to createcards
+        });
+    } else {
+        filteredContainer.innerHTML = '';
+        // Display all cards again
+        createcards(data);
+    }
+}
+
+document.querySelector('.koken').addEventListener('input', function() {
+    filterItems('koken');
+});
+
+document.querySelector('.rythm').addEventListener('input', function() {
+    filterItems('rythm');
+});
+
+document.querySelector('.design').addEventListener('input', function() {
+    filterItems('design');
+});

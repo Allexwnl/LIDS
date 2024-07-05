@@ -42,10 +42,6 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-search button {
-    
-}
-
 .navbar-links {
     display: flex;
     justify-content: flex-end;

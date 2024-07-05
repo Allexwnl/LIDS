@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script src="src/script.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIDS | Home</title>
-    <link rel="stylesheet" href="style.css">
-
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "vdf-parser": "https://cdn.jsdelivr.net/npm/vdf-parser/+esm"
+            }
+        }
+    </script>
+    <script type="module" src="src/script.js" defer></script>
 </head>
+
 <body>
     <div class="navbar">
         <div class="navbar-inner">
@@ -16,16 +25,71 @@
                 <input type="text" placeholder="Search..." id="searchBar">
             </div>
             <div class="navbar-links">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a href="#">welkom guest</a>
+                <img src="img/profile2.jpg" alt="profile">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="filters">
+            <div class="filters-techniek">
+                <input type="checkbox" class="koken">
+                <label for="inputclose" class="koken">Techniek, Productie en Bouw</label><br>
+            </div>
+            <div class="filters-zorg">
+                <input type="checkbox" class="rythm">
+                <label for="inputclose">zorg: Gezondheidszorg en -welzijn</label><br>
+            </div>
+            <div class="filters-horeca">
+                <input type="checkbox" class="design">
+                <label for="inputclose">horeca: Toerisme, recreatie en horeca</label><br>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div>
+        <div class="techpart">
+            <h1 class="titlepart">Techniek, Productie in Bouw</h1>
+            <div class="cardpart">
+                <div class="text1">hallo 1</div>
+                <div class="text2">hallo 2</div>
+            </div>
+            <div id="newSection"></div>
+        </div>
+        <div class="carepart">
+            <h1 class="titlepart">Gezondheidszorg, en -welzijn</h1>
+            <div class="cardpart">
+                <div class="text1">hallo 1</div>
+                <div class="text2">hallo 2</div>
+            </div>
+        </div>
+        <div class="touristpart">
+            <h1 class="titlepart">Toerisme, recreatie en horeca</h1>
+            <div class="cardpart">
+                <div class="text1">hallo 1</div>
+                <div class="text2">hallo 2</div>
             </div>
         </div>
     </div>
 
-    <section class="section-container">
+    <!-- <section>
         <div id="newSection"></div>
-    </section>
+    </section> -->
 
+    <!-- <div class="container-infoAndLoading">
+        <div class="container">
+            <h1>Geometry Dash Information</h1>
+            <div id="game-info"></div>
+        </div>
+
+        <div>
+            <button id="butDirectory">Get gameinfo</button>
+        </div>
+        <input type="file" name="inputFile" id="inputFile">
+
+        <pre id="output">Loading...</pre>
+    </div> -->
 </body>
+
 </html>

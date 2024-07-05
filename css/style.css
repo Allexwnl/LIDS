@@ -1,9 +1,277 @@
-img {
-    width: 8rem;
-    height: 11rem;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    height: 100vh;
+    width: 100vw;
 }
 
-img:hover {
-    transition: 0.7s;
-    transform: scale(1.2);
+.navbar-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    background: #357cff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    position: relative;
+}
+
+.navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+.navbar-logo {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+}
+
+.navbar-search {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-search input[type="text"] {
+    width: 25rem;
+    padding: 8px 10px;
+    border: #ffffff 2px solid;
+    border-radius: 2rem;
+    font-size: 18px;
+    transition: box-shadow 0.3s;
+}
+
+.navbar-search input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+    font-weight: 900;
+}
+
+#filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1%;
+    gap: 10px;
+}
+
+#filterButton {
+    border-radius: 0px 8px 8px 0px;
+    border: none;
+    background: none;
+    color: white;
+}
+
+#filterButton {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.filters-techniek {
+    background-color: rgb(73, 82, 255);
+    padding: 0.5%;
+    border-radius: 40px;
+    color: white;
+}
+
+.filters-zorg {
+    background-color: orange;
+    padding: 0.5%;
+    border-radius: 40px;
+    color: white;
+}
+
+.filters-horeca {
+    background-color: rgb(0, 215, 0);
+    padding: 0.5%;
+    border-radius: 40px;
+    color: white;
+}
+
+img[alt="profile"] {
+    width: 40px;
+    border-radius: 50%;
+    height: 40px;
+}
+
+hr {
+    margin-top: 1%;
+}
+
+.navbar-links a:hover,
+.navbar-logo:hover {
+    color: #f8f8f8;
+    transform: scale(1.1);
+}
+
+.section-container {
+    display: flex;
+    justify-content: center;
+}
+
+#newSection {
+    justify-content: center;
+    max-width: 120rem;
+    gap: 10px;
+    z-index: 1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.custom-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 40rem;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.custom-card:hover {
+    transform: scale(1.05);
+}
+
+.custom-card-image {
+    background: #357cff;
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    margin: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.custom-card-date {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.custom-card-title {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+}
+
+.custom-card-description {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.custom-card-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.custom-card-button {
+    min-width: 8rem;
+    max-width: 8rem;
+    padding: 10px 20px;
+    color: #fff;
+    background: #357cff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+.custom-card-button:hover {
+    background: #255bb5;
+}
+
+.custom-card-button-secondary {
+    min-width: 8rem;
+    max-width: 8rem;
+    padding: 10px 20px;
+    color: #fff;
+    background: #357cff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+.custom-card-button-secondary:hover {
+    background: #255bb5;
+}
+
+.container-infoAndLoading {
+    width: 80vw;
+}
+
+.titlepart {
+    font-size: 32px;
+    font-weight: bold;
+    color: #357cff;
+    text-decoration: none;
+}
+
+.cardpart {
+    background-color: #357cff;
+    border-radius: 12px;
+    padding: 10px;
+    max-width: 300px;
+    color: white;
+    max-height: 20rem;
+}
+
+.techpart {
+    padding-left: 3rem;
+}
+
+.carepart {
+    padding-left: 3rem;
+}
+
+.touristpart {
+    padding-left: 3rem;
 }
