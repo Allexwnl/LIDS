@@ -30,32 +30,23 @@ function createcards(data) {
 
     data.forEach(game => {
         const card = document.createElement("div");
-        card.className = "custom-card";
+        card.className = "card";
         section.appendChild(card)
         
         card.dataset.gameId = game.appId; // Store the game ID in the dataset
         section.appendChild(card);
 
-        const img = document.createElement("div");
-        img.className = "custom-card-image";
-        img.style.backgroundImage = `url(${game.img})`;
-        img.style.backgroundSize = "cover";
-        img.style.backgroundPosition = "center";
+        const gametittle = document.createElement("h3");
+        gametittle.textContent = game.name;
+
+        const img = document.createElement("img");
+        img.className = "card-img";
+        img.src = game.img;
         card.appendChild(img);
 
         const cardContent = document.createElement("div");
-        cardContent.className = "custom-card-content";
+        cardContent.className = "card-content";
         card.appendChild(cardContent);
-
-        const cardTitle = document.createElement("h2");
-        cardTitle.className = "custom-card-title";
-        cardTitle.textContent = game.title;
-        cardContent.appendChild(cardTitle);
-
-        const cardDescription = document.createElement("p");
-        cardDescription.className = "custom-card-description";
-        cardDescription.textContent = game.description;
-        cardContent.appendChild(cardDescription);
 
         const cardButtons = document.createElement("div");
         cardButtons.className = "custom-card-buttons";
