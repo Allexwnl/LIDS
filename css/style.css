@@ -139,12 +139,8 @@ hr {
 }
 
 #newSection {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     max-width: 120rem;
-    margin: 15px;
     gap: 10px;
     z-index: 1;
 }
@@ -250,4 +246,32 @@ hr {
 
 .container-infoAndLoading {
     width: 80vw;
+}
+
+.titlepart {
+    font-size: 32px;
+    font-weight: bold;
+    color: #357cff;
+    text-decoration: none;
+}
+
+.cardpart {
+    background-color: #357cff;
+    border-radius: 12px;
+    padding: 10px;
+    max-width: 300px;
+    color: white;
+    max-height: 20rem;
+}
+
+.techpart {
+    padding-left: 3rem;
+}
+
+.carepart {
+    padding-left: 3rem;
+}
+
+.touristpart {
+    padding-left: 3rem;
 }
