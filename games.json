@@ -4,47 +4,161 @@
             "id": 1,
             "name": "Geometry Dash",
             "appId": 322170,
-            "title": "Geometry Dash",
-            "description": "Geometry Dash game now",
-            "genre": "rythm",
             "img": "img/geometrydash-feature.jpg",
             "gallery": [
-
-        ]
-      },
-    {
-        "id": 2,
-        "name": "one armed cook",
-        "appId": 2551020,
-        "title": "one armed cook",
-        "description": "one cooked",
-        "genre": "koken",
-        "img": "img/one-armed-cook-portrait-768x1024.jpg",
-        "gallery": [
-
-        ]
-    },
-    {
-        "id": 3,
-        "name": "Wallpaper Engine",
-        "appId": 431960,
-        "img": "img/wallpaper.png",
-        "title": "walpaper Engine",
-        "genre": "design",
-        "gallery": [
-            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/431960/ss_5aec3335b1ae2300aa91da990d7e24541ddcf68d.1920x1080.jpg?t=1717097477",
-            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/431960/ss_3f539468e81b897f28ea5e3de4b8cfdfe7220a21.1920x1080.jpg?t=1717097477"
-        ]
-    },
-    {
-        "id": 4,
-        "name": "InductVR (beta)",
-        "title": "Bread & Fred",
-        "appId": 907180,
-        "img": "img/inductVR.png",
-        "gallery": [
-        "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/907180/ss_a5825d662079f587b15b470e563792c2dedaf94f.1920x1080.jpg?t=1560774744"
-        ]
-    }
-]
+                
+            ]
+        },
+        {
+            "id": 2,
+            "name": "InductVR (beta)",
+            "appId": 907180,
+            "gallery": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/907180/ss_a5825d662079f587b15b470e563792c2dedaf94f.1920x1080.jpg?t=1560774744"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Home Tech VR",
+            "appId": 576230,
+            "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/576230/header.jpg?t=1491711025",
+            "gallery": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/576230/ss_cc2a2f9fae4c75f61299ed55bf75961a5094d86c.1920x1080.jpg?t=1491711025",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/576230/ss_20b00282508e8af997c891bc55def109593c0440.1920x1080.jpg?t=1491711025",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/576230/ss_f7f7617e0067eeb4826dd08a331982bfa8d2438c.1920x1080.jpg?t=1491711025",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/576230/ss_4898dd023882d735274bcde625a62df6e278262b.1920x1080.jpg?t=1491711025",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/576230/ss_ea24d691994195d8484112ca86a9870d5fa79c5f.1920x1080.jpg?t=1491711025",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/576230/ss_c02c4853bdb1e8566650fdbc47a90e43bbb6d353.1920x1080.jpg?t=1491711025",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/576230/ss_d18dc72f1492a9629a8440ab52d2bcc75bb1555d.1920x1080.jpg?t=1491711025",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/576230/ss_d268a38266d81d3269e348ab5060537c760b9d7e.1920x1080.jpg?t=1491711025",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/576230/ss_2b36dee4909d242a8b66404dcfe80b44855198de.1920x1080.jpg?t=1491711025"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Excavator Simulator VR",
+            "appId": 1526380,
+            "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1526380/header.jpg?t=1617116960",
+            "gallery": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1526380/ss_6b9131b91caae4c685b29e4650750037a2bafa92.1920x1080.jpg?t=1617116960",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1526380/ss_0195ddacae47367bdc779e0d1ad482c02cd0a91a.1920x1080.jpg?t=1617116960",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1526380/ss_36b34dfe59aadb8f058912bc6b89a4b34aae3acc.1920x1080.jpg?t=1617116960",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1526380/ss_d915afe7dfc92d645440d46fe5fd84a097f52796.1920x1080.jpg?t=1617116960",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1526380/ss_75c0a0fc0627939f388429724438dc5538f38991.1920x1080.jpg?t=1617116960",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1526380/ss_912e0af83d0548467ee7a1d41fb39013816847ba.1920x1080.jpg?t=1617116960",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1526380/ss_1bfca0dc93491942d9b2557d1a5c4569806da926.1920x1080.jpg?t=1617116960",
+             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1526380/ss_8bb3aca12e9c1653a59ca7a7014a4cbfa4522759.1920x1080.jpg?t=1617116960"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Construction Simulator",
+            "appId": 1273400,
+            "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1273400/header.jpg?t=1719506214",
+            "gallery": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1273400/ss_307bcfed98b63f356a9487780603a50be1e25a60.1920x1080.jpg?t=1719506214",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1273400/ss_a7feb4e87697894a992bb5bc1af93d0437b09664.1920x1080.jpg?t=1719506214",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1273400/ss_204550666a72db15c89f3abcb9028fc75398b350.1920x1080.jpg?t=1719506214",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1273400/ss_be28023ffe48abe37d4a5f0abef0768d46f985ee.1920x1080.jpg?t=1719506214",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1273400/ss_4bd7b3d7d25a9793c344d5aca8ece03c6974c7ba.1920x1080.jpg?t=1719506214",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1273400/ss_0c35fc78046675093cbfdd3218385390fb558cb9.1920x1080.jpg?t=1719506214",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1273400/ss_238ba42d58093e77e2c846c2be6f2416de5110d6.1920x1080.jpg?t=1719506214",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1273400/ss_ea8b565761ec6dba11c41edafd3ee54d91b33b1b.1920x1080.jpg?t=1719506214",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1273400/ss_d221c240e47e2ad8b3e2b6a2b17c4f4aafb1741f.1920x1080.jpg?t=1719506214"
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Woodcutter",
+            "appId": 2429450,
+            "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429450/header.jpg?t=1705272431",
+            "gallery": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429450/ss_ca3ff2a25725d2812cc0a5075d485e9abe312ad3.1920x1080.jpg?t=1705272431",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429450/ss_88a9bb9b0395a4ddf4e0cdfa7eb2920249859855.1920x1080.jpg?t=1705272431",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429450/ss_7c864a8e3d5e21e1113f9b64a437093ab1f2e503.1920x1080.jpg?t=1705272431",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429450/ss_a4a6dcefc9c83b52269e5f9ca86731de73ef820f.1920x1080.jpg?t=1705272431",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429450/ss_7b1935c6f627bfa294b36a771a108919399ca9bf.1920x1080.jpg?t=1705272431",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429450/ss_e641c3727e21e2d881085c1fdb2193722dfcae83.1920x1080.jpg?t=1705272431",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429450/ss_4690ef099a60aab67897684d2f119a587f2ca78d.1920x1080.jpg?t=1705272431",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429450/ss_09f97f43d8b943b9de2ad9128bb6bbf5257a02ee.1920x1080.jpg?t=1705272431",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429450/ss_d321048d89ddb34272c94f91584ad0c06ac2a189.1920x1080.jpg?t=1705272431"
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Surgical Robot Simulator",
+            "appId": 1727070,
+            "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1727070/header.jpg?t=1631982071",
+            "gallery": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1727070/ss_4afbeeb3ed19a39771caba81912e38ddee1f30fc.1920x1080.jpg?t=1631982071",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1727070/ss_966a530400cfb1c018701b2d5f6e0d5a25b21c3e.1920x1080.jpg?t=1631982071",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1727070/ss_04012a05f884d39e1261acb21d0a2cf52a778671.1920x1080.jpg?t=1631982071",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1727070/ss_0b2f2d0bc910147eb62e1fe6f122574d7b73d953.1920x1080.jpg?t=1631982071",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1727070/ss_09cef55b87e04ba2d43e7e4da3d66b0435ab983c.1920x1080.jpg?t=1631982071",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1727070/ss_2804f37c526c22929e523bc533cf08e5bd359532.1920x1080.jpg?t=1631982071"
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Hairdresser Simulator",
+            "appId": 1330560,
+            "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1330560/header.jpg?t=1717709093",
+            "gallery": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1330560/ss_4234dc0fcd325a07e567f0fd9c9d8d94692ca839.1920x1080.jpg?t=1717709093",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1330560/ss_b30a01818ad7e7d2a8f4fc9fb28e1a3e2aaaf56a.1920x1080.jpg?t=1717709093",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1330560/ss_f0fd913e5e25469f9c6e60de179a9e8138701a73.1920x1080.jpg?t=1717709093",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1330560/ss_d546bf8f09c9f64243095050a7cd9049d64d2115.1920x1080.jpg?t=1717709093",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1330560/ss_8c5ddbe8abd34b0562473028b0d5855d3cbde1a5.1920x1080.jpg?t=1717709093",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1330560/ss_07d611466ac5815155d8d0d5529bd92e5ff448d9.1920x1080.jpg?t=1717709093",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1330560/ss_227b478ef775ffa2d80c873a7f1ea466826f09dd.1920x1080.jpg?t=1717709093",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1330560/ss_e1994eb44be140aeb9586fc6244ce22f3abc1738.1920x1080.jpg?t=1717709093",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1330560/ss_11b2a662efd4657a55182eaf2b95ab099c7779d2.1920x1080.jpg?t=1717709093",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1330560/ss_41bbe34d7f59a3312ce7e2fb7999d1f08fea6a41.1920x1080.jpg?t=1717709093"
+            ]
+        },
+        {
+            "id": 9,
+            "name": "CHICARO DENTISTRY",
+            "appId": 1256680,
+            "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1256680/header.jpg?t=1625030177",
+            "gallery": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1256680/ss_adc0cfcb51a8962d38e6a6150dbbb00772ca2237.1920x1080.jpg?t=1625030177",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1256680/ss_e0a2a382a014919e877d95637779c55b54caf612.1920x1080.jpg?t=1625030177",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1256680/ss_e63c510102868163e0385755cb62cf45b42bb5bc.1920x1080.jpg?t=1625030177",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1256680/ss_9d424a32d80c3ad5abd776ccf2332f4413e0760c.1920x1080.jpg?t=1625030177",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1256680/ss_2afc8a159600257ec07d8dc50f07d9aacf9fc9a1.1920x1080.jpg?t=1625030177"
+            ]
+        },
+        {
+            "id": 10,
+            "name": "VR TKA Surgery Simulator",
+            "appId": 2651810,
+            "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2651810/header.jpg?t=1704367604",
+            "gallery": [
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2651810/ss_3e57f24dd4f5db2aff42d6b7b416306e1a522d1a.1920x1080.jpg?t=1704367604",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2651810/ss_b267f39133e19abc3a8e710ec813f91d81105ac9.1920x1080.jpg?t=1704367604",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2651810/ss_184a5bf846c2e332d22ac1c884889d323716395a.1920x1080.jpg?t=1704367604",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2651810/ss_fbc0fe1abc4b0a2549306060e8848a14a5bc9d9b.1920x1080.jpg?t=1704367604",
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2651810/ss_308c0189eb4785c30cddb5566598c537fbdd35e8.1920x1080.jpg?t=1704367604"
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Bartender VR Simulator",
+            "appId": 704300,
+            "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/704300/header.jpg?t=1700762778",
+            "gallery": [
+                "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/704300/ss_257b6757fc5a0475518db0bc5445d1a314082ec3.1920x1080.jpg?t=1700762778",
+                "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/704300/ss_4684361eca110622a45152d983eac0cc0b6278e7.1920x1080.jpg?t=1700762778",
+                "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/704300/ss_342279e6546bf92e375f182d84eab1848b05807f.1920x1080.jpg?t=1700762778",
+                "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/704300/ss_12ff7adfdda2e4d9c9f97e7b6161fa5075649498.1920x1080.jpg?t=1700762778",
+                "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/704300/ss_141d6ff358727697658d69197ffaad64d89c7a93.1920x1080.jpg?t=1700762778",
+                "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/704300/ss_904add7690c09d89b6ab35ec9624f22f6f1db15f.1920x1080.jpg?t=1700762778",
+                "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/704300/ss_f9f54845ebdbd02bc54665d06d7f6a399edd13a3.1920x1080.jpg?t=1700762778",
+                "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/704300/ss_25887df868a9a639caf572ed11e10bca17da9a42.1920x1080.jpg?t=1700762778",
+                "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/704300/ss_16a4289e0d4d05ac376ec45fb8d57112c92e67a4.1920x1080.jpg?t=1700762778",
+                "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/704300/ss_e27c301bd050f92a25cd469adb41e3004c6165fe.1920x1080.jpg?t=1700762778"
+            ]
+        }
+    ]
 }
