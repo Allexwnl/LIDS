@@ -5,15 +5,15 @@ const gameMap = new Map();
 
 function loadinglocalstorage() {
     fetch("games.json")
-       .then(response => response.json())
-       .then(gamedata => {
-            data = gamedata.games;
-            localStorage.setItem("data", JSON.stringify(data));
+    .then(response => response.json())
+    .then(gamedata => {
+         data = gamedata.games;
+         localStorage.setItem("data", JSON.stringify(data));
 
-            // Create a Map of game objects with their names as keys
-            data.forEach(game => gameMap.set(game.name, game));
+         // Create a Map of game objects with their names as keys
+         data.forEach(game => gameMap.set(game.name, game));
 
-            createcards(data);
+         createcards(data);
 
             const names = data.map(game => game.name);
 
@@ -26,32 +26,51 @@ function loadinglocalstorage() {
 }
 
 function createcards(data) {
-    const section = document.getElementById("newSection");
+    // Ensure section is reset for each call
+    let section = null;
 
     data.forEach(game => {
+        // Determine which section the game belongs to
+        if (game.genre === "techniek") {
+            section = document.getElementById("techniekSection");
+        } else if (game.genre === "care") {
+            section = document.getElementById("careSection");
+        } else if (game.genre === "horeca") {
+            section = document.getElementById("touristSection");
+        } else {
+            console.error(`No section found for genre: ${game.genre}`);
+            return; // Skip to the next game if no section is found
+        }
+
+        // Create the card element
         const card = document.createElement("div");
         card.className = "card";
-        section.appendChild(card)
-        
-        card.dataset.gameId = game.appId; // Store the game ID in the dataset
-        section.appendChild(card);
+        card.dataset.gameId = game.appId;
 
-        const gametittle = document.createElement("h3");
-        gametittle.textContent = game.name;
+        // Create and append the game title
+        const gametitle = document.createElement("h3");
+        gametitle.textContent = game.name;
+        card.appendChild(gametitle);
 
-        const img = document.createElement("img");
-        img.className = "card-img";
-        img.src = game.img;
-        card.appendChild(img);
+        // Create and append the game image, if it exists
+        if (game.img) {
+            const img = document.createElement("img");
+            img.className = "card-img";
+            img.src = game.img;
+            card.appendChild(img);
+        }
 
+        // Create and append the card content container
         const cardContent = document.createElement("div");
         cardContent.className = "card-content";
         card.appendChild(cardContent);
 
+        // Create and append the card buttons container
         const cardButtons = document.createElement("div");
         cardButtons.className = "custom-card-buttons";
         cardContent.appendChild(cardButtons);
 
+        // Create and append the Play button
         const play = document.createElement('button');
         play.textContent = 'Play';
         play.id = 'launchButton';
@@ -61,6 +80,7 @@ function createcards(data) {
         });
         cardButtons.appendChild(play);
 
+        // Create and append the Info button
         const info = document.createElement('button');
         info.className = 'custom-card-button-secondary';
         info.textContent = 'Info';
@@ -68,8 +88,12 @@ function createcards(data) {
             window.location.href = `moreinfo.html?game=${encodeURIComponent(game.name)}`;
         });
         cardButtons.appendChild(info);
+
+        // Append the card to the appropriate section
+        section.appendChild(card);
     });
 }
+
 
 function filterResultsByLetter(results, letter) {
     return results.filter(name => name?.toLowerCase().includes(letter.toLowerCase()));
@@ -151,8 +175,8 @@ function filterItems(genre) {
     }
 }
 
-document.querySelector('.koken').addEventListener('input', function() {
-    filterItems('koken');
+document.querySelector('.techniek').addEventListener('input', function() {
+    filterItems('techniek');
 });
 
 document.querySelector('.rythm').addEventListener('input', function() {
