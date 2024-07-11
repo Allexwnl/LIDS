@@ -1,5 +1,5 @@
-document.getElementById('launchButton').addEventListener('click', function() {
-    window.location.href = 'steam://run/322170';
+document.addEventListener('DOMContentLoaded', () => {
+    loadinglocalstorage();
 });
 
 let data;
@@ -19,7 +19,7 @@ function loadinglocalstorage() {
 
             const names = data.map(game => game.name);
 
-            // Voeg een event listener toe aan het zoekveld
+            // Add event listener to the search field
             document.getElementById('searchBar').addEventListener('input', () => {
                 const letter = document.getElementById('searchBar').value.trim();
                 const filteredNames = filterResultsByLetter(names, letter);
@@ -33,23 +33,49 @@ function createcards(data) {
 
     data.forEach(game => {
         const card = document.createElement("div");
-        card.className = "card";
-        section.appendChild(card)
+        card.className = "custom-card";
+        section.appendChild(card);
 
-        const img = document.createElement("img");
-        img.src = game.img;
-        img.alt = game.title;
+        const img = document.createElement("div");
+        img.className = "custom-card-image";
+        img.style.backgroundImage = `url(${game.img})`;
+        img.style.backgroundSize = "cover";
+        img.style.backgroundPosition = "center";
         card.appendChild(img);
 
-        const play = document.createElement('button')
-        play.textContent = 'Play'
-        play.id = 'launchButton'
-        card.appendChild(play)
+        const cardContent = document.createElement("div");
+        cardContent.className = "custom-card-content";
+        card.appendChild(cardContent);
 
-        const info = document.createElement('button')
-        info.textContent = 'infoButton'
-        info.id = 'infobutton'
-        card.appendChild(info)
+        const cardTitle = document.createElement("h2");
+        cardTitle.className = "custom-card-title";
+        cardTitle.textContent = game.name; // Changed to game.name
+        cardContent.appendChild(cardTitle);
+
+        const cardDescription = document.createElement("p");
+        cardDescription.className = "custom-card-description";
+        cardDescription.textContent = "Description for " + game.name; // Placeholder description
+        cardContent.appendChild(cardDescription);
+
+        const cardButtons = document.createElement("div");
+        cardButtons.className = "custom-card-buttons";
+        cardContent.appendChild(cardButtons);
+
+        const play = document.createElement('button');
+        play.className = 'custom-card-button';
+        play.textContent = 'Play';
+        play.addEventListener('click', function () {
+            window.location.href = `steam://run/${game.appId}`;
+        });
+        cardButtons.appendChild(play);
+
+        const info = document.createElement('button');
+        info.className = 'custom-card-button-secondary';
+        info.textContent = 'Info';
+        info.addEventListener('click', function () {
+            window.location.href = `moreinfo.html?game=${encodeURIComponent(game.name)}`;
+        });
+        cardButtons.appendChild(info);
     });
 }
 
@@ -64,10 +90,3 @@ function displayResults(filteredNames) {
     const filteredGames = filteredNames.map(name => gameMap.get(name));
     createcards(filteredGames);
 }
-
-console.log(localStorage);
-loadinglocalstorage();
-
-document.getElementById('launchButton').addEventListener('click', function() {
-    window.location.href = 'steam://run/322170';
-});
