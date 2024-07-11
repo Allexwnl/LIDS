@@ -5,15 +5,15 @@ const gameMap = new Map();
 
 function loadinglocalstorage() {
     fetch("games.json")
-       .then(response => response.json())
-       .then(gamedata => {
-            data = gamedata.games;
-            localStorage.setItem("data", JSON.stringify(data));
+    .then(response => response.json())
+    .then(gamedata => {
+         data = gamedata.games;
+         localStorage.setItem("data", JSON.stringify(data));
 
-            // Create a Map of game objects with their names as keys
-            data.forEach(game => gameMap.set(game.name, game));
+         // Create a Map of game objects with their names as keys
+         data.forEach(game => gameMap.set(game.name, game));
 
-            createcards(data);
+         createcards(data);
 
             const names = data.map(game => game.name);
 
@@ -25,51 +25,84 @@ function loadinglocalstorage() {
         });
 }
 
-function createcards(data) {
-    const section = document.getElementById("newSection");
+function createcards(data, Newsection) {
+    // Ensure section is reset for each call
+    let section = Newsection;
+
 
     data.forEach(game => {
+        // Determine which section the game belongs to
+        if (game.genre === "techniek") {
+            section = document.getElementById("techniekSection");
+        } else if (game.genre === "care") {
+            section = document.getElementById("careSection");
+        } else if (game.genre === "horeca") {
+            section = document.getElementById("touristSection");
+        } else  if (document.getElementsByClassName("techniek").checked || document.getElementById("searchBar").value.trim() !== "") {
+            section = document.getElementById("newSection");
+        } else {
+            console.error(`No section found for genre: ${game.genre}`);
+            return; // Skip to the next game if no section is found
+        }
+        
+
+        // Create the card element
         const card = document.createElement("div");
         card.className = "card";
-        section.appendChild(card)
+        card.dataset.gameId = game.appId;
+
+        // Create and append the game title
+        const gametitle = document.createElement("h3");
+        gametitle.textContent = game.name;
+        card.appendChild(gametitle);
         
-        card.dataset.gameId = game.appId; // Store the game ID in the dataset
-        section.appendChild(card);
+        // Create and append the game image, if it exists
+        if (game.img) {
+            const img = document.createElement("img");
+            img.className = "card-img";
+            img.src = game.img;
+            card.appendChild(img);
+        }
 
-        const gametittle = document.createElement("h3");
-        gametittle.textContent = game.name;
-
-        const img = document.createElement("img");
-        img.className = "card-img";
-        img.src = game.img;
-        card.appendChild(img);
-
+        // Create and append the card content container
         const cardContent = document.createElement("div");
         cardContent.className = "card-content";
         card.appendChild(cardContent);
-
+        
+        // Create and append the card buttons container
         const cardButtons = document.createElement("div");
         cardButtons.className = "custom-card-buttons";
         cardContent.appendChild(cardButtons);
-
+        
+        // Create and append the Info button
+        const info = document.createElement('i');
+        info.className = 'custom-card-button-secondary bx bx-play bx-lg';
+        info.textContent = '';
+        info.addEventListener('click', function () {
+            window.location.href = `moreinfo.html?game=${encodeURIComponent(game.name)}`;
+        });
+        cardButtons.appendChild(info);
+        
         const play = document.createElement('button');
         play.textContent = 'Play';
         play.id = 'launchButton';
+        play.style.display = 'none';
         play.className = 'custom-card-button';
         play.addEventListener('click', function() {
             window.location.href = `steam://run/${game.appId}`;
         });
         cardButtons.appendChild(play);
 
-        const info = document.createElement('button');
-        info.className = 'custom-card-button-secondary';
-        info.textContent = 'Info';
-        info.addEventListener('click', function () {
-            window.location.href = `moreinfo.html?game=${encodeURIComponent(game.name)}`;
-        });
-        cardButtons.appendChild(info);
-    });
+
+        // Append the card to the appropriate section
+        if (section) {
+            section.appendChild(card);
+        } else {
+            console.error(`No section found for genre: ${game.genre}`);
+        }    });
 }
+
+
 
 function filterResultsByLetter(results, letter) {
     return results.filter(name => name?.toLowerCase().includes(letter.toLowerCase()));
@@ -82,6 +115,7 @@ function displayResults(filteredNames) {
     const filteredGames = filteredNames.map(name => gameMap.get(name));
     createcards(filteredGames);
 }
+
 
 // Load game data from local storage and display cards
 loadinglocalstorage();
@@ -112,7 +146,7 @@ document.getElementById('inputFile').addEventListener('change', async (event) =>
         const appIds = Object.keys(apps).map(Number);
 
         // Update cards based on installed games
-        document.querySelectorAll('#newSection > .custom-card').forEach(card => {
+        document.querySelectorAll('#techniekSection > .custom-card').forEach(card => {
             const gameId = Number(card.dataset.gameId);
             const launchButton = card.querySelector('#launchButton');
             
@@ -122,43 +156,42 @@ document.getElementById('inputFile').addEventListener('change', async (event) =>
                     window.location.href = `https://store.steampowered.com/app/${gameId}`;
                 });
             }
+
+            console.log(appIds);
         });
     } catch (error) {
         console.error("Error parsing VDF file:", error);
     }
 });
 
-// Toggle menu visibility
 function filterItems(genre) {
     const searchTerm = document.getElementsByClassName(genre);
-    const filteredContainer = document.getElementById('newSection');
+    const gamesSection = document.getElementById('gamesSection');
+
+    gamesSection.innerHTML = ''; // Clear the gamesSection
 
     if (searchTerm[0].checked) {
         // Filter items by genre
-        const filteredItems = data.filter(item => item.genre && item.genre.toLowerCase() === genre.toLowerCase());
+        const filteredItems = data.filter(item => item.genre && item.genre.toLowerCase() === genre.toLowerCase);
 
-        // Clear the container
-        filteredContainer.innerHTML = '';
-
-        // Add filtered items to the container
+        // Add filtered items to the gamesSection
         filteredItems.forEach(item => {
-            createcards([item]); // Pass the item as an array to createcards
+            createcards([item], gamesSection); // Pass the item as an array to createcards and the gamesSection as an argument
         });
     } else {
-        filteredContainer.innerHTML = '';
         // Display all cards again
-        createcards(data);
+        createcards(data, gamesSection);
     }
 }
 
-document.querySelector('.koken').addEventListener('input', function() {
-    filterItems('koken');
+document.querySelector('.techniek').addEventListener('input', function() {
+    filterItems('techniek');
 });
 
 document.querySelector('.rythm').addEventListener('input', function() {
-    filterItems('rythm');
+    filterItems('care');
 });
 
 document.querySelector('.design').addEventListener('input', function() {
-    filterItems('design');
+    filterItems('horeca');
 });
