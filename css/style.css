@@ -1,10 +1,15 @@
+html {
+    width: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f8f8f8;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .navbar-container {
@@ -138,15 +143,36 @@ hr {
     justify-content: center;
 }
 
-#newSection {
+#techniekSection {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 120rem;
-    margin: 15px;
     gap: 10px;
-    z-index: 1;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 80%; /* or any specific width you prefer */
+    flex-wrap: nowrap;
+    border-radius: 10px;
+}
+
+#careSection {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 80%; /* or any specific width you prefer */
+    flex-wrap: nowrap;
+    border-radius: 10px;
+}
+
+#touristSection {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 80%; /* or any specific width you prefer */
+    flex-wrap: nowrap;
+    border-radius: 10px;
 }
 
 .container {
@@ -156,54 +182,48 @@ hr {
     width: 100%;
 }
 
-.custom-card {
+.card h3 {
     display: flex;
-    background-color: #fff;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-width: 40rem;
-    overflow: hidden;
-    transition: transform 0.4s ease;
-}
-
-.custom-card:hover {
-    transform: scale(1.05);
-}
-
-.custom-card-image {
-    background: #357cff;
-    width: 150px;
-    height: 150px;
-    border-radius: 15px;
-    margin: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.custom-card-content {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
-.custom-card-date {
-    font-size: 0.9em;
-    color: #888;
-    margin-bottom: 10px;
+.card {
+    position: relative;
+    width: 500px; /* Set the desired width */
+    height: 340px; /* Set the desired height */
+    flex: 0 0 auto; /* Prevent shrinking */
+    border-radius: 10px; /* Optional: for rounded corners */
+    background-color:#357cff;
+    color: white;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: for shadow */
 }
 
-.custom-card-title {
-    font-size: 1.5em;
-    margin: 0 0 10px;
-    font-size: 1.8rem;
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire container */
+    z-index: 1; /* Place the image on the lowest layer */
+    border-radius: 10px;
 }
 
-.custom-card-description {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
+.card-content {
+    position: absolute;
+    top: 0;
+    right: -3%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0); /* Transparent background */
+    color: white; /* Make the text white for better readability */
+    z-index: 2; /* Place the content on the top layer */
+    padding: 20px; /* Optional: for inner spacing */
+    text-align: center;
 }
+
 
 .custom-card-buttons {
     display: flex;
@@ -230,11 +250,11 @@ hr {
 }
 
 .custom-card-button-secondary {
-    min-width: 8rem;
-    max-width: 8rem;
+    min-width: 5rem;
+    max-width: 3rem;
     padding: 10px 20px;
     color: #fff;
-    background: #357cff;
+    background: transparent;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -242,12 +262,89 @@ hr {
     font-weight: bold;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 1rem;
+    transition: 1.1s;
+    background-color: #357cff;
 }
 
 .custom-card-button-secondary:hover {
     background: #255bb5;
+    transform: scale(1.2);
 }
 
 .container-infoAndLoading {
     width: 80vw;
+}
+
+.techniektitlepart {
+    font-size: 32px;
+    font-weight: bold;
+    color: #357cff;
+    text-decoration: none;
+}
+
+.techniekcardpart {
+    background-color: #357cff;
+    border-radius: 12px;
+    padding: 10px;
+    width: 15%;
+    color: white;
+    height: 20rem;
+}
+
+.techpart {
+    padding-left: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.techniekRow {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100vw;
+}
+
+.caretitlepart {
+    font-size: 32px;
+    font-weight: bold;
+    color: orange;
+    text-decoration: none;
+}
+
+.carecardpart {
+    background-color: orange;
+    border-radius: 12px;
+    padding: 10px;
+    width: 15%;
+    color: white;
+    height: 20rem;
+}
+
+.carepart {
+    padding-left: 3rem;
+}
+
+.touristpart {
+    padding-left: 3rem;
+}
+
+.horecatitlepart {
+    font-size: 32px;
+    font-weight: bold;
+    color: rgb(0, 215, 0);
+    text-decoration: none;
+}
+
+.horecapart {
+    background-color: rgb(0, 215, 0);
+    border-radius: 12px;
+    padding: 10px;
+    width: 15%;
+    color: white;
+    height: 20rem;
+}
+
+.stipple-effect {
+    border-top: 1px dashed ;
+    margin-top: -4%;
 }
