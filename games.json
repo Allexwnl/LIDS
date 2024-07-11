@@ -1,12 +1,13 @@
 {
     "games": [
+
         {
             "id": 1,
-            "name": "Geometry Dash",
-            "appId": "322170",
-            "img": "img/geometrydash-feature.jpg",
+            "name": "InductVR (beta)",
+            "genre": "techniek",
+            "appId": 907180,
             "gallery": [
-                
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/907180/ss_a5825d662079f587b15b470e563792c2dedaf94f.1920x1080.jpg?t=1560774744"
             ]
         },
         {
@@ -21,7 +22,8 @@
         {
             "id": 3,
             "name": "Home Tech VR",
-            "appId": "576230",
+            "genre": "techniek",
+            "appId": 576230,
             "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/576230/header.jpg?t=1491711025",
             "gallery": [
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/576230/ss_cc2a2f9fae4c75f61299ed55bf75961a5094d86c.1920x1080.jpg?t=1491711025",
@@ -38,7 +40,8 @@
         {
             "id": 4,
             "name": "Excavator Simulator VR",
-            "appId": "1526380",
+            "genre": "techniek",
+            "appId": 1526380,
             "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1526380/header.jpg?t=1617116960",
             "gallery": [
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1526380/ss_6b9131b91caae4c685b29e4650750037a2bafa92.1920x1080.jpg?t=1617116960",
@@ -54,7 +57,8 @@
         {
             "id": 5,
             "name": "Construction Simulator",
-            "appId": "1273400",
+            "genre": "techniek",
+            "appId": 1273400,
             "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1273400/header.jpg?t=1719506214",
             "gallery": [
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1273400/ss_307bcfed98b63f356a9487780603a50be1e25a60.1920x1080.jpg?t=1719506214",
@@ -69,9 +73,10 @@
             ]
         },
         {
-            "id": 6,
+            "id": 5,
             "name": "Woodcutter",
-            "appId": "2429450",
+            "genre": "techniek",
+            "appId": 2429450,
             "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429450/header.jpg?t=1705272431",
             "gallery": [
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429450/ss_ca3ff2a25725d2812cc0a5075d485e9abe312ad3.1920x1080.jpg?t=1705272431",
@@ -86,9 +91,10 @@
             ]
         },
         {
-            "id": 7,
+            "id": 6,
             "name": "Surgical Robot Simulator",
-            "appId": "1727070",
+            "genre": "care",
+            "appId": 1727070,
             "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1727070/header.jpg?t=1631982071",
             "gallery": [
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1727070/ss_4afbeeb3ed19a39771caba81912e38ddee1f30fc.1920x1080.jpg?t=1631982071",
@@ -100,9 +106,10 @@
             ]
         },
         {
-            "id": 8,
+            "id": 7,
             "name": "Hairdresser Simulator",
-            "appId": "1330560",
+            "genre": "care",
+            "appId": 1330560,
             "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1330560/header.jpg?t=1717709093",
             "gallery": [
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1330560/ss_4234dc0fcd325a07e567f0fd9c9d8d94692ca839.1920x1080.jpg?t=1717709093",
@@ -118,9 +125,10 @@
             ]
         },
         {
-            "id": 9,
+            "id": 8,
             "name": "CHICARO DENTISTRY",
-            "appId": "1256680",
+            "genre": "care",
+            "appId": 1256680,
             "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1256680/header.jpg?t=1625030177",
             "gallery": [
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1256680/ss_adc0cfcb51a8962d38e6a6150dbbb00772ca2237.1920x1080.jpg?t=1625030177",
@@ -131,9 +139,10 @@
             ]
         },
         {
-            "id": 10,
+            "id": 9,
             "name": "VR TKA Surgery Simulator",
-            "appId": "2651810",
+            "genre": "care",
+            "appId": 2651810,
             "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2651810/header.jpg?t=1704367604",
             "gallery": [
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2651810/ss_3e57f24dd4f5db2aff42d6b7b416306e1a522d1a.1920x1080.jpg?t=1704367604",
@@ -144,9 +153,10 @@
             ]
         },
         {
-            "id": 11,
+            "id": 10,
             "name": "Bartender VR Simulator",
-            "appId": "704300",
+            "genre": "horeca",
+            "appId": 704300,
             "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/704300/header.jpg?t=1700762778",
             "gallery": [
                 "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/704300/ss_257b6757fc5a0475518db0bc5445d1a314082ec3.1920x1080.jpg?t=1700762778",

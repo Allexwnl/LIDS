@@ -1,0 +1,51 @@
+.card {
+    position: relative;
+    width: 300px; /* pas de breedte naar wens aan */
+    height: 200px; /* pas de hoogte naar wens aan */
+    border-radius: 10px; /* optioneel: voor afgeronde hoeken */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* optioneel: voor schaduw */
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zorgt ervoor dat de afbeelding de hele container bedekt */
+    z-index: 1; /* Plaats de afbeelding op de onderste laag */
+}
+
+.card-content {
+    position: absolute;
+    top: 0;
+    right: -0.2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0); /* Transparante achtergrond */
+    color: white; /* Maak de tekst wit voor betere leesbaarheid */
+    z-index: 2; /* Plaats de inhoud op de bovenste laag */
+    padding: 20px; /* optioneel: voor binnenruimte */
+    text-align: center;
+}
+
+button {
+min-width: 8rem;
+max-width: 8rem;
+padding: 10px 20px;
+color: #fff;
+background: #357cff;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+text-transform: uppercase;
+font-weight: bold;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+font-size: 1rem;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
