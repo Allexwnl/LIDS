@@ -143,6 +143,15 @@ hr {
     justify-content: center;
 }
 
+#newSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 120rem;
+    margin: 15px;
+    gap: 10px;
+}
 #techniekSection {
     display: flex;
     flex-direction: row;
