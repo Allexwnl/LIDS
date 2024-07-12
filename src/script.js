@@ -145,7 +145,7 @@ document.getElementById('inputFile').addEventListener('change', async (event) =>
         const parsedData = VDF.parse(text);
         const apps = parsedData.libraryfolders["0"].apps;
         const appIds = Object.keys(apps).map(Number);
-
+        console.log(appIds);
         // Update cards based on installed games
         document.querySelectorAll('.card').forEach(card => {
             const gameId = Number(card.dataset.gameId);
