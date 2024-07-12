@@ -5,24 +5,24 @@ const gameMap = new Map();
 
 function loadingLocalStorage() {
     fetch("games.json")
-        .then(response => response.json())
-        .then(gamedata => {
-            data = gamedata.games;
-            localStorage.setItem("data", JSON.stringify(data));
+    .then(response => response.json())
+    .then(gamedata => {
+        data = gamedata.games;
+        localStorage.setItem("data", JSON.stringify(data));
 
-            // Create a Map of game objects with their names as keys
-            data.forEach(game => gameMap.set(game.name, game));
+        // Create a Map of game objects with their names as keys
+        data.forEach(game => gameMap.set(game.name, game));
 
-            createCards(data);
+        createCards(data);
 
-            const names = data.map(game => game.name);
+        const names = data.map(game => game.name);
 
-            document.getElementById('searchBar').addEventListener('input', () => {
-                const letter = document.getElementById('searchBar').value.trim();
-                const filteredNames = filterResultsByLetter(names, letter);
-                displayResults(filteredNames);
-            });
+        document.getElementById('searchBar').addEventListener('input', () => {
+            const letter = document.getElementById('searchBar').value.trim();
+            const filteredNames = filterResultsByLetter(names, letter);
+            displayResults(filteredNames);
         });
+    });
 }
 
 function createCards(data) {
@@ -151,14 +151,13 @@ document.getElementById('inputFile').addEventListener('change', async (event) =>
             const gameId = Number(card.dataset.gameId);
             const launchButton = card.querySelector('#launchButton');
 
-            if (!appIds.includes(gameId)) {
-                launchButton.textContent = 'Install';
+            if (appIds.includes(gameId)) {
                 launchButton.style.display = 'block';
+            } else {
+                launchButton.textContent = 'Install';
                 launchButton.addEventListener('click', () => {
                     window.location.href = `https://store.steampowered.com/app/${gameId}`;
                 });
-            } else {
-                launchButton.style.display = 'block';
             }
         });
     } catch (error) {
@@ -167,23 +166,28 @@ document.getElementById('inputFile').addEventListener('change', async (event) =>
 });
 
 function filterItems(genre) {
+    const genreCheckbox = document.querySelector(`.${genre}`);
     const gamesSection = document.getElementById('gamesSection');
+
+    if (!genreCheckbox || !gamesSection) return;
+
     gamesSection.innerHTML = ''; // Clear the gamesSection
 
-    const filteredItems = data.filter(item => item.genre && item.genre.toLowerCase() === genre.toLowerCase());
+    if (genreCheckbox.checked) {
+        // Filter items by genre
+        const filteredItems = data.filter(item => item.genre && item.genre.toLowerCase() === genre.toLowerCase());
 
-    // Add filtered items to the gamesSection
-    createCards(filteredItems);
+        // Add filtered items to the gamesSection
+        createCards(filteredItems);
+    } else {
+        // Display all cards again
+        createCards(data);
+    }
 }
 
-document.querySelector('.techniek').addEventListener('input', () => {
-    filterItems('techniek');
-});
-
-document.querySelector('.rythm').addEventListener('input', () => {
-    filterItems('care');
-});
-
-document.querySelector('.design').addEventListener('input', () => {
-    filterItems('horeca');
+// Attach event listeners for genre filters
+document.querySelectorAll('.genre-filter').forEach(filter => {
+    filter.addEventListener('input', (event) => {
+        filterItems(event.target.className.split(' ')[0]);
+    });
 });
